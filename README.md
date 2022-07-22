@@ -1,1 +1,0 @@
-this is a repository where it contains a completely formatted site already being a site of a single page where the user will walk between them, and inside the menu I left a form with access to a possible system or who knows comments
