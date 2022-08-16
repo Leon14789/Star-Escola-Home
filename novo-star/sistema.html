@@ -1,66 +1,111 @@
 <!DOCTYPE HTML>
 <html>
+
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="assets/css/main.css" />
-	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	<link rel="stylesheet" href="assets/css/sistema.css" />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 </head>
+
 <body class="is-preload">
 	<div id="page-wrapper">
-
+		<div class="logo">
+			<img src="images/logo-only.png" alt="" srcset="">
+		</div>
 		<!-- Content -->
 		<section class="fundo-form">
 			<h3 class="head-form">Insira suas Informações para Entrar no Sistema</h3>
 
-			<div class="form">
+			<form class="form 	frmLoginData" action="https://starescola.com.br/escola/admin/login.php" method=post>
+				<input type="hidden" name="direcionar" value="index.php">
+				<input type="hidden" name="fazer_login" value="1">
+				<input type="hidden" id="tipo_user" name="tipo_user" value="admin">
+
 				<div class="content-form">
-					<a href="" class="botao-form">Administração</a>
-					<a href="" class="botao-form">Professor</a>
-					<a href="" class="botao-form">Aluno</a>
+					<a href="#administrador" class="rdoTipoUser rdoAdmin botao-form" data-user="admin"
+						data-link="/escola/admin/login.php">Administração</a>
+					<a href="#professor" class="rdoTipoUser rdoProfessor botao-form" data-user="admin_professor"
+						data-link="/escola/admin_professor/login.php">Professor</a>
+					<a href="#aluno" class="rdoTipoUser rdoAluno botao-form" data-user="admin_aluno"
+						data-link="/escola/admin_aluno/login.php">Aluno</a>
 				</div>
 				<div class="input-container ic1">
-					<input id="Id Escola" class="input" type="text" placeholder=" " />
+					<input id="Id Escola" name="id_escola" class="input" type="text" placeholder=" " />
 					<div class="cut"></div>
 					<label for="Id Escola" class="placeholder">Id Escola</label>
 				</div>
 				<div class="input-container ic2">
-					<input id="Login ou E-mail" class="input" type="text" placeholder=" " />
-					<div class="cut"></div>
-					<label for="Login ou E-mail" class="placeholder">Login ou E-mail</label>
+					<input id="Login ou E-mail" class="input" name="login" type="text" placeholder=" " />
+					<div class="cut cut-long"></div>
+					<label for="Login ou E-mail" class="placeholder" >Login ou E-mail</label>
 				</div>
 				<div class="input-container ic2">
-					<input id="Senha" class="input" type="text" placeholder=" " />
+					<input id="Senha" class="input" type="password" placeholder=" " name="senha" />
 					<div class="cut cut-short"></div>
 					<label for="Senha" class="placeholder">Senha</label>
-					</div>
-					<button type="submit" class="submit">Entrar</button>
 				</div>
-			</label>
-		</div>
+				<button type="submit" class="btnLogar submit">Entrar</button>
+			</form>
+		</section>
+
+
 	</div>
-</section>
-</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/jquery.dropotron.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+	<script>
+		$(function () {
+
+
+			// if (localStorage.getItem("login") && !window.location.href.includes('error')) {
+			//   if (parseInt(localStorage.getItem("id_escola")) == 3 && localStorage.getItem('tipo_user') ==
+			//     'http://starescola.com.br/escola/admin/login.php') {} else {
+			//     $("#login").val(localStorage.getItem("login"));
+			//     $("#senha").val(localStorage.getItem("senha"));
+			//     $("#id_escola").val(localStorage.getItem("id_escola"));
+			//     $(".frmLoginData").attr("action", localStorage.getItem("tipo_user"));
+
+			//     $(".btnLogar").trigger('click');
+			//   }
+			// }
+
+			$(".rdoAdmin").css("background-color", "#4d6828");
+
+			$(".rdoTipoUser").on("click", function () {
+				$(".rdoTipoUser").css("background-color", "#9abf5f");
+				$(this).css("background-color", "#4d6828");
+				$(".frmLoginData").attr("action", $(this).data("link"));
+				$("#tipo_user").val($(this).data("user"));
+			});
+
+			$(".btnLogar").on("click", function (e) {
+				e.preventDefault();
+
+				let login = $("#login").val(),
+					senha = $("#senha").val(),
+					id_escola = $("#id_escola").val(),
+					tipo_user = $(".frmLoginData").attr("action")
+
+				localStorage.setItem("login", login);
+				localStorage.setItem("senha", senha);
+				localStorage.setItem("id_escola", id_escola);
+				localStorage.setItem("tipo_user", tipo_user);
+
+				$(".frmLoginData").submit()
+			});
+		});
+	</script>
+
 </body>
-</html>
 
-
-
-
-
-
-
-</div>
-
-<!-- Scripts -->
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/jquery.scrolly.min.js"></script>
-<script src="assets/js/jquery.dropotron.min.js"></script>
-<script src="assets/js/jquery.scrollex.min.js"></script>
-<script src="assets/js/browser.min.js"></script>
-<script src="assets/js/breakpoints.min.js"></script>
-<script src="assets/js/util.js"></script>
-<script src="assets/js/main.js"></script>
-
-</body>
 </html>

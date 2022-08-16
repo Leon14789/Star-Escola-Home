@@ -76,7 +76,7 @@ section, summary, time, mark, audio, video {
 
 		html, body {
 			box-sizing: border-box;
-			background-image: linear-gradient(#333e2a, #c4f4a1) !important;
+			background-color: #9abf5f;
 		}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -103,7 +103,7 @@ section, summary, time, mark, audio, video {
 			-webkit-transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
 			-ms-transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
 			transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
-			border-bottom: dotted 1px;
+			border-bottom: 2px solid white;
 			color: #0a0c08;
 			text-decoration: none;
 			border-bottom-color:#000 ;
@@ -3129,21 +3129,18 @@ section, summary, time, mark, audio, video {
 		}
 
 		.spotlight.style1 .content {
-			border-color: #809B69;
-			background-image: linear-gradient(#809b69, #c4f4a1) !important;
+			border-color:#9abf5f;
+			background-color: #9abf5f !important;
 		}
 
 		.spotlight.style2 .content {
-			border-color: #809B69;
-			background-image: linear-gradient(#809b69, #c4f4a1) !important;
-			border-radius: 10px;
+			border-color: #8bac56;
+			background-color: #8bac56;
 		}
 
 		.spotlight.style3 .content {
-			border-color: #809B69;
-			background-image: linear-gradient(#809b69, #c4f4a1) !important;
-			border-radius: 10px;
-
+			border-color: #7b994c;
+			background-color: #7b994c;
 		}
 
 		.spotlight.inactive .content {
@@ -3405,20 +3402,22 @@ section, summary, time, mark, audio, video {
 
 		#header nav ul li {
 			list-style: none;
-			border: 2px solid;
 			padding: 0px 10px;
 			margin: 5px 10px 0px 10px;
-			border-radius: 20px;
+			background-color: #9abf5f;
+			text-transform: uppercase;
+			width: 200px;
+			text-align: center;
+			cursor: pointer;
 		}
 
-		#header nav ul li:hover {
-			color: #fff;
-			background-color:#89ab71;
+		#header nav ul li a {
+			color: white;
 		}
-
-
-
-
+		
+		.menu-floating li {
+			animation: float 1000s ease-in-out infinite;
+		}
 
 		#header nav ul li a, #header nav ul li span {
 			border: 0;
@@ -3427,7 +3426,41 @@ section, summary, time, mark, audio, video {
 			line-height: inherit;
 			outline: 0;
 			font-size: large;
+			font-family: 'Gotham Book';
+
 		}
+
+		#header nav ul li::before {  
+			transform: scaleX(0);
+			transform-origin: bottom right;
+		  }
+		  
+		  #header nav ul li:hover::before {
+			transform: scaleX(1);
+			transform-origin: bottom left;
+		  }
+		  
+		  #header nav ul li::before {
+			content: " ";
+			display: block;
+			position: absolute;
+			top: 0; right: 0; bottom: 0; left: 0;
+			inset: 0 0 0 0;
+			background: #4e6827;
+			z-index: -1;
+			transition: transform .3s ease;
+		  }
+		  
+		  #header nav ul li a {
+			position: relative;
+		  }
+		  
+		  @media (orientation: landscape) {
+			body {
+			  grid-auto-flow: column;
+			}
+		  }
+		  
 
 		#header nav ul li a.button, #header nav ul li span.button {
 			height: 2em;
@@ -3462,7 +3495,7 @@ section, summary, time, mark, audio, video {
 		#banner {
 			background-attachment: fixed;
 			background-color: #272833;
-			background-image: url("../../images/banner.jpg");
+			background-image: url("../../images/starescola.jpg");
 			background-position: center center;
 			background-size: cover;
 			box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.25);
@@ -3541,8 +3574,8 @@ section, summary, time, mark, audio, video {
 		/* Footer */
 
 		#footer {
-			background-image: linear-gradient(#809b69, #c4f4a1) !important;
-			padding: 6em 0;
+			background-image: linear-gradient(#9abf5f, #4e6827) !important;
+			padding: 3em 0 1em 0em;
 			text-align: center;
 		}
 
@@ -4115,19 +4148,23 @@ section, summary, time, mark, audio, video {
 		/*	NOSSAS ATUALIZAÇÕES*/
 
 		@font-face {
-			font-family: 'Good Times Regular';
+			font-family: 'Good Times';
 			src: url( '../webfonts/Good Times Regular.woff2');
 		}
 
 		@font-face {
-			font-family: 'gotham-book-webfont';
+			font-family: 'Gotham Book';
 			src: url( '../webfonts/gotham-book-webfont.woff2');
+		}
+
+		body {
+			font-family: 'Gotham Book' !important;
 		}
 
 		
 
 		.home-header {
-			font-family:'Good Times Regular';
+			font-family:'Good Times';
 			text-align: center;
 			color: #232421;
 		}
@@ -4138,6 +4175,10 @@ section, summary, time, mark, audio, video {
 			font-size: large;
 			color: #0a0c08;
 
+		}
+
+		p.justify {
+			text-align: justify;
 		}
 
 
@@ -4187,10 +4228,47 @@ section, summary, time, mark, audio, video {
 
 		/*Botao testar gratuitamente*/
 
-		.oi {
+		.testar-gratuitamente span::before {  
+			transform: scaleX(0);
+			transform-origin: bottom right;
+		  }
+		  
+		  .testar-gratuitamente span:hover::before {
+			transform: scaleX(1);
+			transform-origin: bottom left;
+		  }
+		  
+		  .testar-gratuitamente span::before {
+			content: " ";
+			display: block;
+			position: absolute;
+			top: 0; right: 0; bottom: 0; left: 0;
+			inset: 0 0 0 0;
+			background: hsl(200 100% 80%);
+			z-index: -1;
+			transition: transform .3s ease;
+		  }
+		  
+		  .testar-gratuitamente span {
+			  position: relative;
+		  }
+		  
+		  .testar-gratuitamente {
+			list-style: none;
+			padding: 10px 10px;
+			margin: 5px 10px 0px 10px;
+			background-color: #9abf5f;
+			text-transform: uppercase;
+			width: 200px;
+			text-align: center;
+			cursor: pointer;
+		  }
+		  
+/* 
+		.testar-gratuitamente {
 			pointer-events: auto;
 			cursor: pointer;
-			background: #e7e7e7;
+			background: #4e6827;
 			border: none;
 			padding: 1.5rem 3rem;
 			margin: 0;
@@ -4200,8 +4278,8 @@ section, summary, time, mark, audio, video {
 			display: inline-block;
 		}
 
-		.oi::before,
-		.oi::after {
+		.testar-gratuitamente::before,
+		.testar-gratuitamente::after {
 			position: absolute;
 			top: 0;
 			left: 0;
@@ -4212,32 +4290,31 @@ section, summary, time, mark, audio, video {
 
 
 
-		.oi {
+		.testar-gratuitamente {
 			overflow: hidden;
 			color: #fff;
-			font-family: good times;
+			font-family: 'Good Times';
 			font-weight: 500;
 			padding: 1rem 2rem;
-			border-radius: 10px;
 		}
 
-		.oi span {
+		.testar-gratuitamente span {
 			display: block;
 			position: relative;
 		}
 
-		.oi > span {
+		.testar-gratuitamente > span {
 			overflow: hidden;
 			mix-blend-mode: difference;
 		}
 
-		.oi:hover > span > span {
+		.testar-gratuitamente:hover > span > span {
 			animation: MoveUpInitial 0.2s forwards, MoveUpEnd 0.2s forwards 0.2s;
 		}
 
-		.oi::before {
+		.testar-gratuitamente::before {
 			content: '';
-			background: #000;
+			background: #9abf5f;
 			width: 100%;
 			height: 100%;
 			transform-origin: 50% 100%;
@@ -4247,11 +4324,11 @@ section, summary, time, mark, audio, video {
 			transition-timing-function: cubic-bezier(0.7, 0, 0.2, 1);
 		}
 
-		.oi:hover::before {
+		.testar-gratuitamente:hover::before {
 			transition-duration: 0.3s;
 			-webkit-clip-path: polygon(0 0, 100% 0, 0 0, 0% 100%);
 			clip-path: polygon(0 0, 100% 0, 0 0, 0% 100%);
-		}
+		} */
 
 /*
 CARDS IMG*/
@@ -4386,7 +4463,7 @@ CARDS IMG*/
 	font-size: 18px;
 	height: 50px;
 	margin-top: 38px;
-	// outline: 0;
+	/* outline: 0; */
 	text-align: center;
 	width: 100%;
 }
@@ -4425,3 +4502,41 @@ CARDS IMG*/
 	font-family: good times;
 }
 
+.button {
+	font-family: 'Gotham Book';	
+}
+
+.bold {
+	font-weight: bold;
+}
+
+
+/* cores secundarias - Murillo */
+
+	.primary {
+		color: #9abf5f !important;
+	}
+
+	.secondary {
+		color: #4e6827 !important;
+	}
+
+	.light {
+		color: #f5f9ef;
+	}
+
+	.dark {
+		color: #2f3d18;
+	}
+
+	.bg-primary {
+		background-color: #9abf5f !important;
+	}
+
+	.bg-secondary {
+		background-color: #4e6827 !important;
+	}
+
+	.home-header {
+		color: white !important;
+	}
