@@ -2,7 +2,7 @@
 .button {
 	pointer-events: auto;
 	cursor: pointer;
-	background: #e7e7e7;
+	background: #fff;
 	border: none;
 	padding: 1.5rem 3rem;
 	margin: 0;
@@ -22,12 +22,10 @@
 }
 
 .button--pan {
-	font-family: aktiv-grotesk-extended, sans-serif;
 	font-weight: 700;
-	border: 2px solid #000;
-	border-radius: 3rem;
+	border: 2px solid darkolivegreen;
 	overflow: hidden;
-	color: #fff;
+	color: darkolivegreen !important;
 }
 
 .button--pan span {
@@ -37,7 +35,7 @@
 
 .button--pan::before {
 	content: '';
-	background: #000;
+	background: #4d6726;
 	transition: transform 0.3s cubic-bezier(0.7, 0, 0.2, 1);
 }
 
