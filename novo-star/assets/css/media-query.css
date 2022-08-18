@@ -1,0 +1,61 @@
+@media (max-width: 1200px) {
+    #header nav ul li a {
+        font-size: 15px;
+    }
+
+    #header nav ul li {
+        width: 150px;
+    }
+
+    #banner {
+        background-image: url("../../images/banner/1200.png");
+    }
+
+    section#two .content {
+        padding-top: 8em;
+    }
+
+    section#three {
+        background-position: center 0px;
+        background-image: url("../../images/parceiros/1200.png") !important;
+    }
+
+    section#three .content {
+        padding-top: 8em;
+    }
+
+    section#four {
+        padding-top: 8em;
+    }
+
+}
+
+@media (max-width: 860px){
+    #header nav ul li {
+        margin: 0px;
+    }
+
+    #banner {
+        background-image: url("../../images/banner/860.png");
+    }
+
+    .img-full {
+		display: none !important;
+	}
+
+    .img-860 {
+		display: block !important;
+	}
+
+    .home-header {
+        font-size: 25px;
+    }
+
+    header h2 + p {
+        font-size: 16px;
+    }
+
+    section#one .content {
+        padding: 5em 0 3em 0 !important;
+    }
+}
