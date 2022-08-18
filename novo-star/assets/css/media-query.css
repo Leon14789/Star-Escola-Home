@@ -58,4 +58,42 @@
     section#one .content {
         padding: 5em 0 3em 0 !important;
     }
+
+
+    section#two .content {
+        padding: 3em 0em !important;
+        text-align: center;
+    }
+
+    section#two h2 {
+        font-size: 25px;
+    }
+
+    section#two p {
+        font-size: 16px;
+        padding: 0em 3em;
+        text-align: center !important;
+
+    }
+
+    section#three .content {
+        padding: 3em 0em !important;
+        text-align: center;
+    }
+
+    section#three h2 {
+        font-size: 25px;
+    }
+
+    section#three p {
+        font-size: 16px;
+        padding: 0em 3em;
+        text-align: center !important;
+    }
+}
+
+@media (max-width: 860px){
+
+    #
+
 }
