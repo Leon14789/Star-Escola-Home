@@ -76,7 +76,7 @@ section, summary, time, mark, audio, video {
 
 		html, body {
 			box-sizing: border-box;
-			background-color: #9abf5f;
+			background-color: #b8d28f;
 		}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -3495,7 +3495,7 @@ section, summary, time, mark, audio, video {
 		#banner {
 			background-attachment: fixed;
 			background-color: #272833;
-			background-image: url("../../images/starescola.jpg");
+			background-image: url("../../images/banner/full.png");
 			background-position: center center;
 			background-size: cover;
 			box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.25);
@@ -3574,7 +3574,7 @@ section, summary, time, mark, audio, video {
 		/* Footer */
 
 		#footer {
-			background-image: linear-gradient(#9abf5f, #4e6827) !important;
+			background-image: linear-gradient(#b8d28f, #9abf5f) !important;
 			padding: 3em 0 1em 0em;
 			text-align: center;
 		}
@@ -4540,3 +4540,15 @@ CARDS IMG*/
 	.home-header {
 		color: white !important;
 	}
+
+/* alteração Murillo */
+
+	#three {
+		background-position: center 0px;
+		background-image: url("../../images/parceiros/full.png") !important;
+	}
+
+	.img-860 {
+		display: none !important;
+	}
+	
